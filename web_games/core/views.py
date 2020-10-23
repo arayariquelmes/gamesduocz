@@ -1,4 +1,4 @@
-from django.shortcuts import render, HttpResponse
+from django.shortcuts import render
 
 # Create your views here.
 def home(request):
@@ -9,4 +9,4 @@ def home(request):
     return render(request, "index.html", {'titulo': 'Nuestros productos son lo mejor ya tu sabes', 'productos':productos})
 
 def contacto(request):
-    return HttpResponse("<h1>Esto es contacto</h1>")
+    return render(request,"contacto.html")
