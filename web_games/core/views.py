@@ -6,6 +6,3 @@ def home(request):
     productos = Producto.objects.filter(estaEnOferta=True)
     return render(request, "index.html", {'titulo': 'Nuestros productos son lo mejor ya tu sabes'
     ,'productos':productos})
-
-def contacto(request):
-    return render(request,"contacto.html")

@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.humanize',
     'core',
     'productos',
-    'ckeditor'
+    'ckeditor',
+    'contacto'
 ]
 
 MIDDLEWARE = [
@@ -125,3 +126,10 @@ STATIC_URL = '/static/'
 import os
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+#Configuracion de correo de django
+EMAIL_HOST = "smtp.gmail.com"
+EMAIL_HOST_USER = "gamesduocz@gmail.com"
+EMAIL_PORT = '587'
+EMAIL_HOST_PASSWORD = "Games1234567"
+EMAIL_USE_TLS = True
