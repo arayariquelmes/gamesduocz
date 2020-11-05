@@ -6,23 +6,35 @@
                 <h1>Contactenos para solicitar información adicional</h1>
             </div>
         </div>
+        {% if 'ok' in request.GET %}
+            <div class="row mt-5">
+                <div class="col-sm-12 col-lg-6 mx-auto">
+                    <p class="alert alert-info text-center">Mensaje enviado correctamente</p>
+                </div>
+            </div>
+        {% endif %}
+
+        {% if 'error' in request.GET  %}
+            <div class="row mt-5">
+                <div class="col-sm-12 col-lg-6 mx-auto">
+                    <p class="alert alert-error text-center text-white">Ha ocurrido un error al enviar el mensaje</p>
+                </div>
+            </div>
+        {% endif %}    
 
         <div class="row mt-5">
             <form action="" method="POST" class="col-lg-6 col-sm-12 mx-auto" >
                 <!-- Evitar el cross site scripting -->
                 {% csrf_token %}
                 <div class="form-group">
-                    <label for="">Nombre</label>
                     {{form.nombre}}
                     {{form.nombre.errors}}
                 </div>
-                <div class="form-group">
-                    <label for="">Correo</label>
+                <div class="form-group">   
                     {{form.correo}}
                     {{form.correo.errors}}
                 </div>
                 <div class="form-group">
-                    <label for="">Mensaje</label>
                     {{form.mensaje}}
                     {{form.mensaje.errors}}
                 </div>
